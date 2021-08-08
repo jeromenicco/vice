@@ -1,0 +1,38 @@
+.outer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inner-container-hidden {
+  display: flex;
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.inner-container {
+  opacity: 1;
+  transition: all 2s ease;
+}
+
+
+.avatar-img {
+  position: absolute;
+  max-height: 100%;
+  /* width: 60%; */
+  top: 0;
+  left: 0;
+  /* transition: 3s; */
+}
+
+
+.logo-img {
+  max-width: 250px;
+  bottom: 0;
+}
+
+.audio-mp3 {
+  display: none;
+}
+
+
+

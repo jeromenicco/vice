@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "pricedown";
+  src: local('pricedown'), url("../assets/fonts/pricedown.otf") format("woff");
+ }
+
+.info-container-global {
+  font-family: pricedown;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15%;
+ }
+
+ .info-container {
+  font-size: 35px;
+  list-style: none;
+  line-height: 1em;
+  text-align: end;
+  padding-right: 1em;
+ }
+
+.weapon-select-wrap {
+  position: relative;
+  height: 200px;
+  margin-top: 2.5em;
+}
+
+.weapon-select-container1 {
+  height: 120px;
+  width: 120px;
+  border: 2px solid #DC92D0;
+  border-radius: 25px;
+}
+
+.weapon-select-container2 {
+  height: 100px;
+  width: 100px;
+  border: 2px solid #DC92D0;
+  border-radius: 18px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.weapon-select-container-background {
+  height: 100PX;
+  width: 102px;
+  border: 11px solid #fff;
+  border-radius: 25px;
+  position: absolute;
+  top: 1px;
+  z-index: -2;
+}
+
+.weapon-select-container-shadow {
+  height: 105px;
+  width: 100px;
+  border: 11px solid black;
+  border-radius: 30px;
+  position: absolute;
+  top: 7px;
+  left: 1px;
+  z-index: -3;
+}
+
+.time-container {
+  font-size: 35px;
+  display: flex;
+  height: 1em;
+}
+
+.time-now {
+  color: #5BD0FF;
+  text-shadow: 2px 2px black;
+}
+
+.dollars {
+  color: #00E090;
+  text-shadow: 2px 2px black;
+}
+
+.heart-container {
+  font-size: 28px;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  margin-top: -35px;
+}
+
+.heart {
+  color: #FEA0F7;
+  text-shadow: 2px 2px black;
+}
+
+.heart-num {
+  color: #FEA0F7;
+  font-size: 35px;
+  text-shadow: 2px 2px black;
+}
+
+.stars-container {
+  margin-top: -30px;
+}
+
+.star-icon {
+  color: #5BD0FF;
+  width: 40px;
+}
+
+.revolver {
+  position: absolute;
+    top: -10px;
+    width: 140px;
+    left: -10px;
+}
