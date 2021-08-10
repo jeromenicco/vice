@@ -9,11 +9,10 @@ import revolver from '../assets/icons/vice-revolver.png'
 
 import './InfoBox.css'
 
-console.log(new Date())
-// console.log(now.getSeconds())
-// const secondDegrees = ((second / 60) * 360) + 90
 
-function InfoBox() {
+function InfoBox({ data }) {
+
+ console.log(data)
 
   const [ timeHour, setTimeHour ] = useState([])
   const [ timeMin, setTimeMin ] = useState([])
@@ -102,8 +101,8 @@ function InfoBox() {
         <div className='weapon-select-container-background' />
         <div className='weapon-select-container-shadow'/>
         <img
-            className='revolver'
-            src={revolver}
+            className='weapon'
+            src={data.weapon}
             alt='revolver'
           />
       </div>

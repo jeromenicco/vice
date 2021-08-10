@@ -1,14 +1,14 @@
 import './App.css'
 import { Switch, Route } from "react-router-dom"
 import RadioPage from './pages/RadioPage'
-import InfoBox from './components/InfoBox'
+// import InfoBox from './components/InfoBox'
 import { radioList } from './data'
 
 function App() {
   
   return (
     <div id='main-container' className='App'>
-      <InfoBox />
+      {/* <InfoBox /> */}
       {
         radioList.map((item, index) => {
           return (

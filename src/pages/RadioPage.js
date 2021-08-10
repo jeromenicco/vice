@@ -7,9 +7,10 @@ import React, {
 import { useSpring, animated } from 'react-spring'
 
 import { useHistory } from 'react-router-dom'
-import AudioPlayer from 'react-h5-audio-player';
+import AudioPlayer from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
 import RadioMenu from '../components/RadioMenu'
+import InfoBox from '../components/InfoBox'
 
 import './RadioPage.css'
 
@@ -19,48 +20,82 @@ import './RadioPage.css'
     timeStamp = e.currentTarget.currentTime
   }
 
-function RadioPage({ data, index }) {
 
-  const { name, logo, avatar, audio } = data
+function RadioPage({ data, index }) {
+  const { name, logo, avatar, audio, background, weapon } = data
+
+  setTimeout(() => { document.body.style.backgroundColor = background }, 200);
+
+
   const [ currURL, setCurrURL ] = useState('')
   const [ visible, setVisible ] = useState(false)
-  const [ fade, setFade ] = useState(false)
 
   const history = useHistory()
   const player = useRef()
 
   useEffect(() => {
     setCurrURL(history.location.pathname)
-    // console.log(currURL)
   }, [])
   
   useEffect(() => {
     player.current.audio.current.currentTime = timeStamp    
   }, [currURL])
-
-  useEffect(() => {
-      setFade(!fade)
-      return () => setFade(!fade)
-    }, [avatar])
-
   
   const onRenderTranslateX = useSpring({
-    // loop: { reverse: true },
-    from: { x: 0 },
+    from: { x: -1000 },
     to: { x: 200 },
   })
 
-    
+  const onRenderTranslateY = useSpring({
+    from: { y: 250 },
+    to: { y: 0 },
+  })
+
+  const chevronFade = useSpring({
+      loop: true,
+      to: [
+        { opacity: 0.5 },
+        { opacity: 0 },
+      ],
+      from: { opacity: 0 },
+  })
+
+      
   return (
     <div className='outer-container' key={index}>
+      <InfoBox data={data} />
       
-      <div className={ fade ? 'inner-container' : 'inner-container-hidden' }>
+      <div className='inner-container'>
         <animated.img
           style={{...onRenderTranslateX}}
           className='avatar-img'
           src={avatar}
           alt={name}
         />
+      </div>
+              
+      <div
+        className='logo-menu-container'
+        onMouseLeave={() => setVisible(false)}
+        >
+
+        <animated.img
+          style={{...onRenderTranslateY}}
+          className='logo-img'
+          src={logo}
+          alt={name}
+          onMouseEnter={() => setVisible(true)}
+          />
+          {/* {
+            !visible &&
+            <animated.div style={{...chevronFade}}>
+              <p className='chevron' >⟨</p>
+            </animated.div>
+          } */}
+        <RadioMenu visible={visible} />
+      </div>
+
+
 
         <AudioPlayer
           ref={player}
@@ -71,21 +106,6 @@ function RadioPage({ data, index }) {
           controls
           onCanPlay
         />
-      </div>
-              
-      <div
-        className='logo-menu-container'
-        onMouseLeave={() => setVisible(false)}
-      >
-        <img
-          className='logo-img'
-          src={logo}
-          alt={name}
-          onMouseEnter={() => setVisible(true)}
-        />
-        <RadioMenu visible={visible} />
-      </div>
-
     </div>
   )
 }
