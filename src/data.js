@@ -119,7 +119,7 @@ export const radioList = [
     avatar: `${avatarVROCK}`,
     logo: `${logoVROCK}`,
     // audio: `${audioVROCK}`,
-    audio: 'https://vincentbonhomme.io/wp-content/uploads/2021/08/v-rock-grand-theft-auto-vice-city-radio-hard-rock-heavy-metal.mp3',
+    audio: 'https://vincentbonhomme.io/wp-content/uploads/2021/08/gta-vice-city-v-rock-radio-remas-4.mp3',
     path: '/vrock',
     background: '#51776A',
     weapon: `${weaponVROCK}`

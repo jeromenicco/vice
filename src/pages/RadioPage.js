@@ -11,6 +11,7 @@ import AudioPlayer from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
 import RadioMenu from '../components/RadioMenu'
 import InfoBox from '../components/InfoBox'
+import viceLogo from '../assets/vice_main_logo.png'
 
 import './RadioPage.css'
 
@@ -31,14 +32,14 @@ function RadioPage({ data, index }) {
   const [ visible, setVisible ] = useState(false)
 
   const history = useHistory()
-  const player = useRef()
+  const playerRef = useRef()
 
   useEffect(() => {
     setCurrURL(history.location.pathname)
   }, [])
   
   useEffect(() => {
-    player.current.audio.current.currentTime = timeStamp    
+    playerRef.current.audio.current.currentTime = timeStamp    
   }, [currURL])
   
   const onRenderTranslateX = useSpring({
@@ -49,22 +50,13 @@ function RadioPage({ data, index }) {
   const onRenderTranslateY = useSpring({
     from: { y: 250 },
     to: { y: 0 },
-  })
-
-  const chevronFade = useSpring({
-      loop: true,
-      to: [
-        { opacity: 0.5 },
-        { opacity: 0 },
-      ],
-      from: { opacity: 0 },
-  })
-
+  })  
       
   return (
     <div className='outer-container' key={index}>
-      <InfoBox data={data} />
-      
+      <InfoBox data={data} playerRef={playerRef} />
+      <img className='vice-logo' src={`${viceLogo}`} />   
+
       <div className='inner-container'>
         <animated.img
           style={{...onRenderTranslateX}}
@@ -98,10 +90,10 @@ function RadioPage({ data, index }) {
 
 
         <AudioPlayer
-          ref={player}
+          ref={playerRef}
           className='audio-mp3'
           src={audio}
-          autoPlay={true}
+          // autoPlay={true}
           onListen={ e => handleTimeStamp(e) }
           controls
           onCanPlay

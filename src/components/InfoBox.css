@@ -7,7 +7,7 @@
   font-family: pricedown;
   display: flex;
   justify-content: flex-end;
-  margin-right: 15%;
+  margin-right: 5%;
  }
 
  .info-container {
@@ -102,13 +102,17 @@
 }
 
 .star-icon {
-  color: #5BD0FF;
+  /* color: #5BD0FF; */
   width: 40px;
 }
 
 .weapon {
   position: absolute;
-    top: -10px;
-    width: 140px;
-    left: -10px;
+  top: -10px;
+  width: 140px;
+  left: -10px;
+}
+
+.slider-container {
+  /* transform: rotateY(180deg); */
 }
