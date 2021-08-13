@@ -18,26 +18,26 @@ function InfoBox({ data, playerRef }) {
   const [ timeHour, setTimeHour ] = useState([])
   const [ timeMin, setTimeMin ] = useState([])
   const [ timeSec, setTimeSec ] = useState([])
-  
+
 
   useEffect(() => {
     const setDate = () => {
       const now = new Date()
 
       const second = now.getSeconds()
-      
+
       const min = now.getMinutes()
-      
+
       const hour = now.getHours()
 
         setTimeHour(
-          hour < 10 
+          hour < 10
           ? [ `0${hour}`]
           : [ `${hour}` ]
         )
 
         setTimeMin(
-          min < 10 
+          min < 10
           ? [ `0${min}`]
           : [ `${min}` ]
         )
@@ -45,7 +45,7 @@ function InfoBox({ data, playerRef }) {
         setTimeSec(second)
     }
     setDate()
-  
+
     const interval = setInterval(setDate, 1000)
     return () => clearInterval(interval)
 
@@ -97,29 +97,13 @@ function InfoBox({ data, playerRef }) {
 
 
         <li className='stars-container'>
-          <img
-            className='star-icon'
-            src={starICON}
-            alt='star'
-          />
+          <div className="stars-wrap">
+            <div className="stars-empty" style={{backgroundImage: `url(${starICON})`}} />
+            <div className="stars-full" style={{width: `${volValue * 100}%`, backgroundImage: `url(${starActiveICON})`}} />
+          </div>
         </li>
 
-
         <li>
-        <img
-            className='star-icon'
-            src={starActiveICON}
-            alt='star'
-          />
-        </li>
-
-
-        
-        <li>
-
-
-
-
           <div className='slider-container'>
             <Slider
               // track="inverted"
@@ -132,7 +116,7 @@ function InfoBox({ data, playerRef }) {
               // marks={true}
               // inverted={true}
             />
-            <p>{ ((volValue / 12) * 10).toFixed(2) }</p> 
+            <p>{ ((volValue / 12) * 10).toFixed(2) }</p>
           </div>
 
         </li>

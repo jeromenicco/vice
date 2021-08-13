@@ -15,7 +15,7 @@ import viceLogo from '../assets/vice_main_logo.png'
 
 import './RadioPage.css'
 
-  let timeStamp = 0 
+  let timeStamp = 0
 
   const handleTimeStamp = (e) => {
     timeStamp = e.currentTarget.currentTime
@@ -37,11 +37,11 @@ function RadioPage({ data, index }) {
   useEffect(() => {
     setCurrURL(history.location.pathname)
   }, [])
-  
+
   useEffect(() => {
-    playerRef.current.audio.current.currentTime = timeStamp    
+    playerRef.current.audio.current.currentTime = timeStamp
   }, [currURL])
-  
+
   const onRenderTranslateX = useSpring({
     from: { x: -1000 },
     to: { x: 200 },
@@ -50,12 +50,12 @@ function RadioPage({ data, index }) {
   const onRenderTranslateY = useSpring({
     from: { y: 250 },
     to: { y: 0 },
-  })  
-      
+  })
+
   return (
     <div className='outer-container' key={index}>
       <InfoBox data={data} playerRef={playerRef} />
-      <img className='vice-logo' src={`${viceLogo}`} />   
+      <img className='vice-logo' src={`${viceLogo}`} />
 
       <div className='inner-container'>
         <animated.img
@@ -65,7 +65,7 @@ function RadioPage({ data, index }) {
           alt={name}
         />
       </div>
-              
+
       <div
         className='logo-menu-container'
         onMouseLeave={() => setVisible(false)}

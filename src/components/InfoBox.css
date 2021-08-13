@@ -1,22 +1,22 @@
 @font-face {
   font-family: "pricedown";
-  src: local('pricedown'), url("../assets/fonts/pricedown.otf") format("woff");
- }
+  src: local("pricedown"), url("../assets/fonts/pricedown.otf") format("woff");
+}
 
 .info-container-global {
   font-family: pricedown;
   display: flex;
   justify-content: flex-end;
   margin-right: 5%;
- }
+}
 
- .info-container {
+.info-container {
   font-size: 35px;
   list-style: none;
   line-height: 1em;
   text-align: end;
   padding-right: 1em;
- }
+}
 
 .weapon-select-wrap {
   position: relative;
@@ -27,14 +27,14 @@
 .weapon-select-container1 {
   height: 120px;
   width: 120px;
-  border: 2px solid #DC92D0;
+  border: 2px solid #dc92d0;
   border-radius: 25px;
 }
 
 .weapon-select-container2 {
   height: 100px;
   width: 100px;
-  border: 2px solid #DC92D0;
+  border: 2px solid #dc92d0;
   border-radius: 18px;
   position: absolute;
   top: 10px;
@@ -42,7 +42,7 @@
 }
 
 .weapon-select-container-background {
-  height: 100PX;
+  height: 100px;
   width: 102px;
   border: 11px solid #fff;
   border-radius: 25px;
@@ -69,12 +69,12 @@
 }
 
 .time-now {
-  color: #5BD0FF;
+  color: #5bd0ff;
   text-shadow: 2px 2px black;
 }
 
 .dollars {
-  color: #00E090;
+  color: #00e090;
   text-shadow: 2px 2px black;
 }
 
@@ -87,12 +87,12 @@
 }
 
 .heart {
-  color: #FEA0F7;
+  color: #fea0f7;
   text-shadow: 2px 2px black;
 }
 
 .heart-num {
-  color: #FEA0F7;
+  color: #fea0f7;
   font-size: 35px;
   text-shadow: 2px 2px black;
 }
@@ -101,9 +101,22 @@
   margin-top: -30px;
 }
 
-.star-icon {
-  /* color: #5BD0FF; */
-  width: 40px;
+.stars-wrap {
+  width: 240px;
+  height: 44px;
+  position: relative;
+}
+
+.stars-wrap > [class^="stars-"] {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-size: 40px 40px;
 }
 
 .weapon {
