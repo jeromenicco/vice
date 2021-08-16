@@ -92,7 +92,7 @@ function RadioPage({ data, index }) {
         ref={playerRef}
         className="audio-mp3"
         src={audio}
-        autoPlay={true}
+        // autoPlay={true}
         loop={true}
         onListen={(e) => handleTimeStamp(e)}
         controls
