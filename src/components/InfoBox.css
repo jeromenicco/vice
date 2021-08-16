@@ -15,16 +15,26 @@
   list-style: none;
   line-height: 1em;
   text-align: end;
-  padding-right: 1em;
+  padding-right: 0.5em;
 }
 
 .weapon-select-wrap {
   position: relative;
-  height: 200px;
-  margin-top: 2.5em;
+  height: 170px;
+  margin-top: 2em;
 }
 
-.weapon-select-container1 {
+.frame {
+  max-width: 150px;
+}
+
+.weapon {
+  position: absolute;
+  right: 5px;
+  width: 140px;
+}
+
+/* .weapon-select-container1 {
   height: 120px;
   width: 120px;
   border: 2px solid #dc92d0;
@@ -60,7 +70,7 @@
   top: 7px;
   left: 1px;
   z-index: -3;
-}
+} */
 
 .time-container {
   font-size: 35px;
@@ -119,13 +129,10 @@
   background-size: 40px 40px;
 }
 
-.weapon {
-  position: absolute;
-  top: -10px;
-  width: 140px;
-  left: -10px;
+.slider-container {
 }
 
-.slider-container {
-  /* transform: rotateY(180deg); */
+.volume-wrap {
+  margin-top: -40px;
+  opacity: 0;
 }

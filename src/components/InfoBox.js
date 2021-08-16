@@ -1,140 +1,112 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import { useSpring, animated } from "react-spring";
 
-import starICON from '../assets/icons/vice-star.png'
-import starHalfICON from '../assets/icons/vice-star.png'
-import starActiveICON from '../assets/icons/vice-star-active.png'
+import amoFrame from "../assets/vice-frame-weapon.png";
 
-import Slider from '@material-ui/core/Slider'
+import starICON from "../assets/icons/vice-star.png";
+import starActiveICON from "../assets/icons/vice-star-active.png";
 
+import Slider from "@material-ui/core/Slider";
 
+import "./InfoBox.css";
 
-import './InfoBox.css'
+function InfoBox({ data, playerRef, count }) {
+  const [volValue, setVolValue] = useState(0.5);
+  const [timeHour, setTimeHour] = useState([]);
+  const [timeMin, setTimeMin] = useState([]);
 
-
-function InfoBox({ data, playerRef }) {
-
-//  console.log(data)
-
-  const [ timeHour, setTimeHour ] = useState([])
-  const [ timeMin, setTimeMin ] = useState([])
-  const [ timeSec, setTimeSec ] = useState([])
-
+  // console.log(count);
 
   useEffect(() => {
     const setDate = () => {
-      const now = new Date()
+      const now = new Date();
+      // const second = now.getSeconds();
+      const min = now.getMinutes();
+      const hour = now.getHours();
 
-      const second = now.getSeconds()
+      setTimeHour(hour < 10 ? [`0${hour}`] : [`${hour}`]);
+      setTimeMin(min < 10 ? [`0${min}`] : [`${min}`]);
+    };
+    setDate();
 
-      const min = now.getMinutes()
-
-      const hour = now.getHours()
-
-        setTimeHour(
-          hour < 10
-          ? [ `0${hour}`]
-          : [ `${hour}` ]
-        )
-
-        setTimeMin(
-          min < 10
-          ? [ `0${min}`]
-          : [ `${min}` ]
-        )
-
-        setTimeSec(second)
-    }
-    setDate()
-
-    const interval = setInterval(setDate, 1000)
-    return () => clearInterval(interval)
-
-  }, [])
-
-
-
-  // useEffect(() => {
-  //   playerRef.current.audio.current.volume = 0.5
-  // }, [])
-
-  const [ volValue, setVolValue ] = useState(0.5)
+    const interval = setInterval(setDate, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleChange = (e, newValue) => {
-    playerRef.current.audio.current.volume = newValue
-    setVolValue(newValue)
-  }
+    playerRef.current.audio.current.volume = newValue;
+    setVolValue(newValue);
+  };
 
+  const steps = 1 / 12;
 
-  const steps = (1 / 12)
-
-  // const starArray = [
-  //   {
-  //     state: 'empty',
-  //     uri: '../assets/icons/vice-star.png',
-  //   },
-  //   {
-  //     state: 'half',
-  //     uri: '../assets/icons/vice-star-active.png',
-  //   },
-  //   {
-  //     state: 'full',
-  //     uri: '../assets/icons/vice-star-active.png',
-  //   }
-  // ]
-
+  const fadeAmo = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { duration: 600 },
+  });
 
   return (
-    <div className='info-container-global'>
-
-      <ul className='info-container'>
-        <li className='time-now'>{timeHour} : {timeMin}</li>
-        <li className='dollars'>$0000{timeSec}</li>
-        <li className='heart-container'>
-          <p className='heart'>♥</p>
-          <p className='heart-num'>009</p>
+    <div className="info-container-global">
+      <ul className="info-container">
+        <li className="time-now">
+          {timeHour} : {timeMin}
+        </li>
+        <li className="dollars">${count.toFixed(0)}</li>
+        <li className="heart-container">
+          <p className="heart">♥</p>
+          <p className="heart-num">00{data.id}</p>
         </li>
 
-
-
-        <li className='stars-container'>
+        <li className="stars-container">
           <div className="stars-wrap">
-            <div className="stars-empty" style={{backgroundImage: `url(${starICON})`}} />
-            <div className="stars-full" style={{width: `${volValue * 100}%`, backgroundImage: `url(${starActiveICON})`}} />
+            <div
+              className="stars-empty"
+              style={{ backgroundImage: `url(${starICON})` }}
+            />
+            <div
+              className="stars-full"
+              style={{
+                width: `${volValue * 100}%`,
+                backgroundImage: `url(${starActiveICON})`,
+              }}
+            />
           </div>
         </li>
 
-        <li>
-          <div className='slider-container'>
+        <li className="volume-wrap">
+          <div className="slider-container">
             <Slider
-              // track="inverted"
-              style={{width: 240}}
+              style={{ width: 240 }}
               value={volValue}
               onChange={handleChange}
               min={0}
               max={1}
               step={steps}
-              // marks={true}
-              // inverted={true}
             />
-            <p>{ ((volValue / 12) * 10).toFixed(2) }</p>
           </div>
-
         </li>
       </ul>
 
-      <div className='weapon-select-wrap'>
-        <div className='weapon-select-container1' />
-        <div className='weapon-select-container2'/>
-        <div className='weapon-select-container-background' />
-        <div className='weapon-select-container-shadow'/>
-        <img
-            className='weapon'
-            src={data.weapon}
-            alt='revolver'
-          />
+      {/* <div className="weapon-select-wrap">
+        <div className="weapon-select-container1" />
+        <div className="weapon-select-container2" />
+        <div className="weapon-select-container-background" />
+        <div className="weapon-select-container-shadow" />
+        <img className="weapon" src={data.weapon} alt="weapon" />
+      </div> */}
+
+      <div className="weapon-select-wrap">
+        <img className="frame" src={amoFrame} alt="amo-frame" />
+        <animated.img
+          style={{ ...fadeAmo }}
+          className="weapon"
+          src={data.weapon}
+          alt="weapon"
+        />
       </div>
     </div>
-  )
+  );
 }
 
-export default InfoBox
+export default InfoBox;
