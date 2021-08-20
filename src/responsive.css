@@ -1,5 +1,108 @@
+/* 13 INCH */
+
 @media screen and (max-width: 1280px) {
+  /* RADIO MENU */
   .logo-menu-container {
     height: 33em;
+    position: absolute;
+    bottom: 30px;
+    /* left: 17%; */
+  }
+}
+
+/* iPhone 6 - 7 - 8 plus */
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .vice-logo {
+    display: none;
+  }
+
+  .avatar-img {
+    opacity: 0.1;
+    left: -100%;
+    z-index: -1;
+    position: fixed;
+  }
+
+  .info-container-global {
+    margin-right: 2%;
+  }
+
+  .info-container {
+    font-size: 30px;
+    margin-top: 17px;
+  }
+
+  .logo-img {
+    max-width: 200px;
+    padding-left: 10px;
+  }
+
+  .logo-menu-container {
+    margin: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 340px;
+  }
+
+  .menu-container {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    z-index: 0;
+  }
+
+  .menu-items {
+    padding-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .menu-items:hover {
+    transform: none;
+  }
+
+  .menu-items-hidden {
+    opacity: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    height: auto;
+  }
+
+  .weapon-select-wrap {
+    margin-top: 15px;
+  }
+
+  .frame {
+    max-width: 100px;
+  }
+
+  .weapon {
+    width: 90px;
+  }
+
+  .stars-container {
+    position: absolute;
+    bottom: 190px;
+    left: 10px;
+  }
+
+  .volume-wrap {
+    position: absolute;
+    bottom: 190px;
+    left: 10px;
+    /* opacity: 1; */
+    z-index: 1;
+  }
+
+  .heart-container {
+    margin-top: -30px;
+  }
+  .heart {
+    font-size: 23px;
+  }
+  .heart-num {
+    font-size: 30px;
   }
 }

@@ -89,7 +89,6 @@
 }
 
 .heart-container {
-  font-size: 28px;
   display: flex;
   align-items: baseline;
   justify-content: flex-end;
@@ -98,6 +97,7 @@
 
 .heart {
   color: #fea0f7;
+  font-size: 28px;
   text-shadow: 2px 2px black;
 }
 
@@ -133,6 +133,6 @@
 }
 
 .volume-wrap {
-  margin-top: -40px;
+  margin-top: -45px;
   opacity: 0;
 }
