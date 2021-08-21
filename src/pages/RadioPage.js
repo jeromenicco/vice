@@ -17,11 +17,12 @@ const handleTimeStamp = (e) => {
   timeStamp = e.currentTarget.currentTime;
 };
 
-function RadioPage({ data, index }) {
+function RadioPage({ data, index, isMobileDevice }) {
   const { name, logo, avatar, audio, background, duration } = data;
   const [count, setCount] = useState(timeStamp);
   const [currURL, setCurrURL] = useState("");
   const [visible, setVisible] = useState(false);
+  const [spring, setSpring] = useState({});
 
   setTimeout(() => {
     document.body.style.backgroundColor = background;
@@ -32,7 +33,7 @@ function RadioPage({ data, index }) {
 
   useEffect(() => {
     setCurrURL(history.location.pathname);
-  }, []);
+  }, [history.location.pathname]);
 
   useEffect(() => {
     playerRef.current.audio.current.currentTime = timeStamp;
@@ -44,12 +45,17 @@ function RadioPage({ data, index }) {
     }
   });
 
-  const onRenderTranslateX = useSpring({
+  const slideFromLeft = useSpring({
     from: { x: -1000 },
     to: { x: 200 },
   });
 
-  const onRenderTranslateY = useSpring({
+  const slideFromRight = useSpring({
+    from: { x: 1000 },
+    to: { x: 0 },
+  });
+
+  const slideFromBottom = useSpring({
     from: { y: 250 },
     to: { y: 0 },
   });
@@ -57,12 +63,12 @@ function RadioPage({ data, index }) {
   return (
     <div className="outer-container" key={index}>
       <InfoBox data={data} playerRef={playerRef} count={count} />
-      <img className="vice-logo" src={`${viceLogo}`} />
+      <img className="vice-logo" src={`${viceLogo}`} alt="main-logo" />
 
       <div className="inner-container">
         <animated.img
-          style={{ ...onRenderTranslateX }}
           className="avatar-img"
+          style={{ ...slideFromLeft }}
           src={avatar}
           alt={name}
         />
@@ -73,11 +79,13 @@ function RadioPage({ data, index }) {
         onMouseLeave={() => setVisible(false)}
       >
         <animated.img
-          style={{ ...onRenderTranslateY }}
+          style={
+            isMobileDevice ? { ...slideFromRight } : { ...slideFromBottom }
+          }
           className="logo-img"
           src={logo}
           alt={name}
-          onMouseEnter={() => setVisible(true)}
+          onMouseEnter={() => !isMobileDevice && setVisible(true)}
         />
         {/* {
             !visible &&
@@ -85,7 +93,11 @@ function RadioPage({ data, index }) {
               <p className='chevron' >⟨</p>
             </animated.div>
           } */}
-        <RadioMenu visible={visible} />
+        <RadioMenu
+          visible={visible}
+          isMobileDevice={isMobileDevice}
+          currURL={currURL}
+        />
       </div>
 
       <AudioPlayer
@@ -96,7 +108,6 @@ function RadioPage({ data, index }) {
         loop={true}
         onListen={(e) => handleTimeStamp(e)}
         controls
-        onCanPlay
       />
     </div>
   );

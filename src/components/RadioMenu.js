@@ -1,22 +1,23 @@
 import React from "react";
 import { radioList } from "../data";
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 import "./RadioMenu.css";
-import { useMediaQuery } from "react-responsive";
 
-function RadioMenu({ visible }) {
-  // const isMobileDevice = useMediaQuery({
-  //   query: "(min-device-width: 375px)",
-  // });
-
-  // console.log(isMobileDevice === true);
+function RadioMenu({ visible, isMobileDevice, currURL }) {
+  // const itemsColor = isMobileDevice && { opacity: 0.5 };
+  // const activeItemColor = isMobileDevice && { opacity: 1 };
 
   return (
     <div className="menu-container">
       <ul className={visible ? "menu-items-visible" : "menu-items-hidden"}>
         {radioList.map((item, index) => (
           <li key={index}>
-            <Link to={item.path}>
+            <Link
+              exact
+              to={item.path}
+              className="nav-links"
+              activeClassName="active"
+            >
               <p className="menu-items">{item.name}</p>
             </Link>
           </li>

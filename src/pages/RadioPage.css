@@ -2,7 +2,6 @@ body {
   transition: background-color 1s;
 }
 
-
 .outer-container {
   display: flex;
   flex-direction: column;
@@ -19,7 +18,6 @@ body {
   transition: all 2s ease;
 } */
 
-
 .avatar-img {
   position: absolute;
   max-height: 100%;
@@ -28,11 +26,10 @@ body {
   left: 0;
 }
 
-.logo-menu-container{
-    align-items: center;
-    /* position: relative; */
+.logo-menu-container {
+  align-items: center;
+  /* position: relative; */
 }
-
 
 .logo-img {
   max-width: 250px;
@@ -51,11 +48,9 @@ body {
   transform: rotate(90deg);
 } */
 
-
 .vice-logo {
   position: absolute;
   top: 30px;
   left: 50px;
   width: 350px;
 }
-

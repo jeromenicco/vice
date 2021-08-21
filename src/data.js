@@ -45,7 +45,7 @@ import weaponKCHAT from "./assets/weapons/pomp1.png";
 
 export const radioList = [
   {
-    id: "1",
+    id: 1,
     name: "Flash",
     avatar: `${avatarFLASH}`,
     logo: `${logoFLASH}`,
@@ -58,7 +58,7 @@ export const radioList = [
     weapon: `${weaponFLASH}`,
   },
   {
-    id: "2",
+    id: 2,
     name: "Wave",
     avatar: `${avatarWAVE}`,
     logo: `${logoWAVE}`,
@@ -71,7 +71,7 @@ export const radioList = [
     weapon: `${weaponWAVE}`,
   },
   {
-    id: "3",
+    id: 3,
     name: "WildStyle",
     avatar: `${avatarWILDSTYLE}`,
     logo: `${logoWILDSTYLE}`,
@@ -84,7 +84,7 @@ export const radioList = [
     weapon: `${weaponWILDSTYLE}`,
   },
   {
-    id: "4",
+    id: 4,
     name: "Fever",
     avatar: `${avatarFEVER}`,
     logo: `${logoFEVER}`,
@@ -97,7 +97,7 @@ export const radioList = [
     weapon: `${weaponFEVER}`,
   },
   {
-    id: "5",
+    id: 5,
     name: "Espantoso",
     avatar: `${avatarESPANTOSO}`,
     logo: `${logoESPANTOSO}`,
@@ -110,7 +110,7 @@ export const radioList = [
     weapon: `${weaponESPANTOSO}`,
   },
   {
-    id: "6",
+    id: 6,
     name: "Emotion",
     avatar: `${avatarEMOTION}`,
     logo: `${logoEMOTION}`,
@@ -123,7 +123,7 @@ export const radioList = [
     weapon: `${weaponEMOTION}`,
   },
   {
-    id: "7",
+    id: 7,
     name: "Vrock",
     avatar: `${avatarVROCK}`,
     logo: `${logoVROCK}`,
@@ -136,7 +136,7 @@ export const radioList = [
     weapon: `${weaponVROCK}`,
   },
   {
-    id: "8",
+    id: 8,
     name: "Vcpr",
     avatar: `${avatarVCPR}`,
     logo: `${logoVCPR}`,
@@ -149,7 +149,7 @@ export const radioList = [
     weapon: `${weaponVCPR}`,
   },
   {
-    id: "9",
+    id: 9,
     name: "Kchat",
     avatar: `${avatarKCHAT}`,
     logo: `${logoKCHAT}`,

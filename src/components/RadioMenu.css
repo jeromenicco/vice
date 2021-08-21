@@ -1,7 +1,8 @@
 @font-face {
   font-family: "bebasNeue";
-  src: local('bebasNeue'), url("../assets/fonts/BebasNeue-Regular.otf") format("woff");
- }
+  src: local("bebasNeue"),
+    url("../assets/fonts/BebasNeue-Regular.otf") format("woff");
+}
 
 .menu-container {
   display: flex;
@@ -15,20 +16,23 @@ a {
   text-decoration: none;
 }
 
-.menu-items {
-  font-family: 'bebasNeue';
+.nav-links {
+  font-family: "bebasNeue";
   font-size: 35px;
   color: #101010;
-  text-shadow: 1px 1px rgba(255,255,255,0.8);
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.8);
   /* text-shadow: 1px 1px white; */
   line-height: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.menu-items {
   transition: 0.2s ease;
 }
 
 .menu-items:hover {
-  transform: translateX(-10px)
+  transform: translateX(-10px);
 }
 
 .menu-items-hidden {
