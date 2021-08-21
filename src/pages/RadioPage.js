@@ -22,7 +22,6 @@ function RadioPage({ data, index, isMobileDevice }) {
   const [count, setCount] = useState(timeStamp);
   const [currURL, setCurrURL] = useState("");
   const [visible, setVisible] = useState(false);
-  const [spring, setSpring] = useState({});
 
   setTimeout(() => {
     document.body.style.backgroundColor = background;
