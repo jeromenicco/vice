@@ -1,9 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-import {
-  // useSpring,
-  animated,
-} from "react-spring";
+import { useSpring, animated } from "react-spring";
 
 import { useHistory } from "react-router-dom";
 import AudioPlayer from "react-h5-audio-player";
@@ -47,20 +44,20 @@ function RadioPage({ data, index, isMobileDevice }) {
     }
   });
 
-  // const slideFromLeft = useSpring({
-  //   from: { x: -1000 },
-  //   to: { x: 200 },
-  // });
+  const slideFromLeft = useSpring({
+    from: { x: -1000 },
+    to: { x: 200 },
+  });
 
-  // const slideFromRight = useSpring({
-  //   from: { x: 1000 },
-  //   to: { x: 0 },
-  // });
+  const slideFromRight = useSpring({
+    from: { x: 1000 },
+    to: { x: 0 },
+  });
 
-  // const slideFromBottom = useSpring({
-  //   from: { y: 250 },
-  //   to: { y: 0 },
-  // });
+  const slideFromBottom = useSpring({
+    from: { y: 250 },
+    to: { y: 0 },
+  });
 
   return (
     <div className="outer-container" key={index}>
@@ -70,7 +67,7 @@ function RadioPage({ data, index, isMobileDevice }) {
       <div className="inner-container">
         <animated.img
           className="avatar-img"
-          // style={{ ...slideFromLeft }}
+          style={{ ...slideFromLeft }}
           src={avatar}
           alt={name}
         />
@@ -81,9 +78,9 @@ function RadioPage({ data, index, isMobileDevice }) {
         onMouseLeave={() => setVisible(false)}
       >
         <animated.img
-          // style={
-          //   isMobileDevice ? { ...slideFromRight } : { ...slideFromBottom }
-          // }
+          style={
+            isMobileDevice ? { ...slideFromRight } : { ...slideFromBottom }
+          }
           className="logo-img"
           src={logo}
           alt={name}
