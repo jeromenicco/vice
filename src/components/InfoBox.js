@@ -10,7 +10,7 @@ import Slider from "@material-ui/core/Slider";
 
 import "./InfoBox.css";
 
-function InfoBox({ data, playerRef, count }) {
+function InfoBox({ data, playerRef, count, isMobileDevice }) {
   const [volValue, setVolValue] = useState(0.5);
   const [timeHour, setTimeHour] = useState([]);
   const [timeMin, setTimeMin] = useState([]);
@@ -34,6 +34,9 @@ function InfoBox({ data, playerRef, count }) {
   }, []);
 
   const handleChange = (e, newValue) => {
+    // console.log(e);
+    if (e.cancelable) e.preventDefault();
+
     playerRef.current.audio.current.volume = newValue;
     setVolValue(newValue);
   };
@@ -58,34 +61,38 @@ function InfoBox({ data, playerRef, count }) {
           <p className="heart-num">00{data.id}</p>
         </li>
 
-        <li className="stars-container">
-          <div className="stars-wrap">
-            <div
-              className="stars-empty"
-              style={{ backgroundImage: `url(${starICON})` }}
-            />
-            <div
-              className="stars-full"
-              style={{
-                width: `${volValue * 100}%`,
-                backgroundImage: `url(${starActiveICON})`,
-              }}
-            />
-          </div>
-        </li>
+        {!isMobileDevice && (
+          <li className="stars-container">
+            <div className="stars-wrap">
+              <div
+                className="stars-empty"
+                style={{ backgroundImage: `url(${starICON})` }}
+              />
+              <div
+                className="stars-full"
+                style={{
+                  width: `${volValue * 100}%`,
+                  backgroundImage: `url(${starActiveICON})`,
+                }}
+              />
+            </div>
+          </li>
+        )}
 
-        <li className="volume-wrap">
-          <div className="slider-container">
-            <Slider
-              style={{ width: 240 }}
-              value={volValue}
-              onChange={handleChange}
-              min={0}
-              max={1}
-              step={steps}
-            />
-          </div>
-        </li>
+        {!isMobileDevice && (
+          <li className="volume-wrap">
+            <div className="slider-container">
+              <Slider
+                style={{ width: 240 }}
+                value={volValue}
+                onChange={handleChange}
+                min={0}
+                max={1}
+                step={steps}
+              />
+            </div>
+          </li>
+        )}
       </ul>
 
       {/* <div className="weapon-select-wrap">

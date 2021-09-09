@@ -2,26 +2,40 @@ import React, { useRef, useState, useEffect } from "react";
 
 import { useSpring, animated } from "react-spring";
 
+import { useSelector, useDispatch } from "react-redux";
+import { setCurrentTime } from "../redux/slices/timeStampSlice";
+
 import { useHistory } from "react-router-dom";
 import AudioPlayer from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css";
 import RadioMenu from "../components/RadioMenu";
 import InfoBox from "../components/InfoBox";
 import viceLogo from "../assets/vice_main_logo.png";
 
+import "react-h5-audio-player/lib/styles.css";
 import "./RadioPage.css";
 
-let timeStamp = 0;
+// let timeStamp = 0;
 
-const handleTimeStamp = (e) => {
-  timeStamp = e.currentTarget.currentTime;
-};
+// const handleTimeStamp = (e) => {
+//   timeStamp = e.currentTarget.currentTime;
+// };
 
 function RadioPage({ data, index, isMobileDevice }) {
+  const stamp = useSelector((state) => state.timeStamp.currentTime);
   const { name, logo, avatar, audio, background, duration } = data;
-  const [count, setCount] = useState(timeStamp);
+  const [count, setCount] = useState(stamp);
   const [currURL, setCurrURL] = useState("");
   const [visible, setVisible] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handleTimeStamp = (e) => {
+    dispatch(setCurrentTime(e.currentTarget.currentTime));
+  };
+
+  // useEffect(() => {
+  //   console.log(stamp);
+  // }, []);
 
   setTimeout(() => {
     document.body.style.backgroundColor = background;
@@ -35,7 +49,7 @@ function RadioPage({ data, index, isMobileDevice }) {
   }, [history.location.pathname]);
 
   useEffect(() => {
-    playerRef.current.audio.current.currentTime = timeStamp;
+    playerRef.current.audio.current.currentTime = stamp;
   }, [currURL]);
 
   useEffect(() => {
@@ -61,7 +75,12 @@ function RadioPage({ data, index, isMobileDevice }) {
 
   return (
     <div className="outer-container" key={index}>
-      <InfoBox data={data} playerRef={playerRef} count={count} />
+      <InfoBox
+        data={data}
+        playerRef={playerRef}
+        count={count}
+        isMobileDevice={isMobileDevice}
+      />
       <img className="vice-logo" src={`${viceLogo}`} alt="main-logo" />
 
       <div className="inner-container">

@@ -1,7 +1,6 @@
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import RadioPage from "./pages/RadioPage";
-// import InfoBox from './components/InfoBox'
 import { radioList } from "./data";
 import { useMediaQuery } from "react-responsive";
 import "./responsive.css";
@@ -15,7 +14,6 @@ function App() {
 
   return (
     <div id="main-container" className="App">
-      {/* <InfoBox /> */}
       {radioList.map((item, index) => {
         return (
           <Switch key={index}>
