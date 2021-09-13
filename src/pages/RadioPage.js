@@ -11,6 +11,8 @@ import RadioMenu from "../components/RadioMenu";
 import InfoBox from "../components/InfoBox";
 import viceLogo from "../assets/vice_main_logo.png";
 
+import soundEffect from "../assets/audio/sound-effect.mp3";
+
 import "react-h5-audio-player/lib/styles.css";
 import "./RadioPage.css";
 
@@ -27,15 +29,18 @@ function RadioPage({ data, index, isMobileDevice }) {
   const [currURL, setCurrURL] = useState("");
   const [visible, setVisible] = useState(false);
 
+  const loader = soundEffect;
+
   const dispatch = useDispatch();
 
   const handleTimeStamp = (e) => {
     dispatch(setCurrentTime(e.currentTarget.currentTime));
   };
 
-  // useEffect(() => {
-  //   console.log(stamp);
-  // }, []);
+  useEffect(() => {
+    console.log(stamp);
+    console.log(playerRef.current.audio);
+  }, []);
 
   setTimeout(() => {
     document.body.style.backgroundColor = background;
@@ -125,6 +130,7 @@ function RadioPage({ data, index, isMobileDevice }) {
         autoPlay={true}
         loop={true}
         onListen={(e) => handleTimeStamp(e)}
+        type="audio/mpeg"
       />
     </div>
   );
