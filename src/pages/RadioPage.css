@@ -40,6 +40,10 @@ body {
   display: none;
 }
 
+.dummy-spacer-mobile {
+  height: 10px;
+}
+
 /* .chevron {
   position: absolute;
   font-size: 35px;

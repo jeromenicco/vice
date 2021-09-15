@@ -116,6 +116,8 @@ function RadioPage({ data, index, isMobileDevice }) {
               <p className='chevron' >⟨</p>
             </animated.div>
           } */}
+
+        {isMobileDevice && <div className="dummy-spacer-mobile" />}
         <RadioMenu
           visible={visible}
           isMobileDevice={isMobileDevice}
@@ -128,7 +130,6 @@ function RadioPage({ data, index, isMobileDevice }) {
         className="audio-mp3"
         src={audio}
         autoPlay={true}
-        loop={true}
         onListen={(e) => handleTimeStamp(e)}
         type="audio/mpeg"
       />
