@@ -43,15 +43,15 @@ import logoKCHAT from "./assets/radioLogos/kchat-logo-resized.png";
 import weaponKCHAT from "./assets/weapons/pomp1.png";
 // import audioKCHAT from './assets/audio/grand-theft-auto-vice-city-k-chat-pc.mp3'
 
-const prefixURL = "https://jeromenicco.com";
+const prefixURL = "https://jeromenicco.com/build/static/media/vice-radio";
 
 export const radioList = [
   {
     id: 1,
     name: "Flash",
-    avatar: `${avatarFLASH}`,
+    avatar: `${prefixURL}/avatar/flash-avatar-hd-shadow.png`,
     logo: `${logoFLASH}`,
-    audio: `${prefixURL}/build/static/media/vice-radio/flash-fm-gta-vice-city.mp3`,
+    audio: `${prefixURL}/audio/flash-fm-gta-vice-city.mp3`,
     duration: 3792,
     path: "/flash",
     background: "#EE4E8C",
@@ -60,9 +60,9 @@ export const radioList = [
   {
     id: 2,
     name: "Wave",
-    avatar: `${avatarWAVE}`,
+    avatar: `${prefixURL}/avatar/wave-avatar-hd-shadow.png`,
     logo: `${logoWAVE}`,
-    audio: `${prefixURL}/build/static/media/vice-radio/wave-103-grand-theft-auto-vice-city.mp3`,
+    audio: `${prefixURL}/audio/wave-103-grand-theft-auto-vice-city.mp3`,
     duration: 3033,
     path: "/wave",
     background: "#AF95B8",
@@ -71,9 +71,9 @@ export const radioList = [
   {
     id: 3,
     name: "WildStyle",
-    avatar: `${avatarWILDSTYLE}`,
+    avatar: `${prefixURL}/avatar/wildstyle-avatar-hd-shadow.png`,
     logo: `${logoWILDSTYLE}`,
-    audio: `${prefixURL}/build/static/media/vice-radio/wildstyle-gta-vice-city-radio-full-hq.mp3`,
+    audio: `${prefixURL}/audio/wildstyle-gta-vice-city-radio-full-hq.mp3`,
     duration: 4107,
     path: "/wildstyle",
     background: "#CCC5C2",
@@ -82,9 +82,9 @@ export const radioList = [
   {
     id: 4,
     name: "Fever",
-    avatar: `${avatarFEVER}`,
+    avatar: `${prefixURL}/avatar/fever-avatar-hd-shadow.png`,
     logo: `${logoFEVER}`,
-    audio: `${prefixURL}/build/static/media/vice-radio/fever-105-grand-theft-auto-vice-city.mp3`,
+    audio: `${prefixURL}/audio/fever-105-grand-theft-auto-vice-city.mp3`,
     duration: 3794,
     path: "/fever",
     background: "#D6607A",
@@ -93,9 +93,9 @@ export const radioList = [
   {
     id: 5,
     name: "Espantoso",
-    avatar: `${avatarESPANTOSO}`,
+    avatar: `${prefixURL}/avatar/espantoso-avatar-hd-shadow.png`,
     logo: `${logoESPANTOSO}`,
-    audio: `${prefixURL}/build/static/media/vice-radio/radio-espantoso-grand-theft-auto-vice-city-vice-city-stories.mp3`,
+    audio: `${prefixURL}/audio/radio-espantoso-grand-theft-auto-vice-city-vice-city-stories.mp3`,
     duration: 5530,
     path: "/espantoso",
     background: "#F78921",
@@ -104,9 +104,9 @@ export const radioList = [
   {
     id: 6,
     name: "Emotion",
-    avatar: `${avatarEMOTION}`,
+    avatar: `${prefixURL}/avatar/emotion-avatar-hd-shadow.png`,
     logo: `${logoEMOTION}`,
-    audio: `${prefixURL}/build/static/media/vice-radio/emotion-983-gta-vice-city-stories-gta-vice-city-hosted-by-fernando-martinez.mp3`,
+    audio: `${prefixURL}/audio/emotion-983-gta-vice-city-stories-gta-vice-city-hosted-by-fernando-martinez.mp3`,
     duration: 7500,
     path: "/emotion",
     background: "#758DC6",
@@ -115,9 +115,9 @@ export const radioList = [
   {
     id: 7,
     name: "Vrock",
-    avatar: `${avatarVROCK}`,
+    avatar: `${prefixURL}/avatar/vrock-avatar-hd-shadow.png`,
     logo: `${logoVROCK}`,
-    audio: `${prefixURL}/build/static/media/vice-radio/v-rock-grand-theft-auto-vice-city-radio-hard-rock-heavy-metal.mp3`,
+    audio: `${prefixURL}/audio/v-rock-grand-theft-auto-vice-city-radio-hard-rock-heavy-metal.mp3`,
     duration: 4738,
     path: "/vrock",
     background: "#51776A",
@@ -126,9 +126,9 @@ export const radioList = [
   {
     id: 8,
     name: "Vcpr",
-    avatar: `${avatarVCPR}`,
+    avatar: `${prefixURL}/avatar/vcpr-avatar-hd-shadow.png`,
     logo: `${logoVCPR}`,
-    audio: `${prefixURL}/build/static/media/vice-radio/gta-vice-city-radio-comedy-vcpr.mp3`,
+    audio: `${prefixURL}/audio/gta-vice-city-radio-comedy-vcpr.mp3`,
     duration: 5184,
     path: "/vcpr",
     background: "#4686C9",
@@ -137,9 +137,9 @@ export const radioList = [
   {
     id: 9,
     name: "Kchat",
-    avatar: `${avatarKCHAT}`,
+    avatar: `${prefixURL}/avatar/kchat-avatar-hd-shadow.png`,
     logo: `${logoKCHAT}`,
-    audio: `${prefixURL}/build/static/media/vice-radio/grand-theft-auto-vice-city-k-chat-pc.mp3`,
+    audio: `${prefixURL}/audio/grand-theft-auto-vice-city-k-chat-pc.mp3`,
     duration: 6239,
     path: "/kchat",
     background: "#A0B2DB",
