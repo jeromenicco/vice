@@ -7,7 +7,7 @@ import "./responsive.css";
 
 function App() {
   const isMobileDevice = useMediaQuery({
-    query: "(max-device-width: 1280px)",
+    query: "(max-device-width: 800px)",
   });
 
   // console.log(isMobileDevice === true);
