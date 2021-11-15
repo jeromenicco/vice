@@ -57,7 +57,7 @@ function InfoBox({ data, playerRef, count, isMobileDevice }) {
         </li>
         <li className="dollars">${count.toFixed(0)}</li>
         <li className="heart-container">
-          <p className="heart">♥</p>
+          <p className="heart">♥&#xFE0E;</p>
           <p className="heart-num">00{data.id}</p>
         </li>
 
