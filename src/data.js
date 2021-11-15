@@ -49,7 +49,8 @@ export const radioList = [
   {
     id: 1,
     name: "Flash",
-    avatar: `${prefixURL}/avatar/flash-avatar-hd-shadow.png`,
+    // avatar: `${prefixURL}/avatar/flash-avatar-hd-shadow.png`,
+    avatar: avatarFLASH,
     logo: `${logoFLASH}`,
     audio: `${prefixURL}/audio/flash-fm-gta-vice-city.mp3`,
     duration: 3792,
@@ -60,7 +61,8 @@ export const radioList = [
   {
     id: 2,
     name: "Wave",
-    avatar: `${prefixURL}/avatar/wave-avatar-hd-shadow.png`,
+    // avatar: `${prefixURL}/avatar/wave-avatar-hd-shadow.png`,
+    avatar: avatarWAVE,
     logo: `${logoWAVE}`,
     audio: `${prefixURL}/audio/wave-103-grand-theft-auto-vice-city.mp3`,
     duration: 3033,
@@ -71,7 +73,8 @@ export const radioList = [
   {
     id: 3,
     name: "WildStyle",
-    avatar: `${prefixURL}/avatar/wildstyle-avatar-hd-shadow.png`,
+    // avatar: `${prefixURL}/avatar/wildstyle-avatar-hd-shadow.png`,
+    avatar: avatarWILDSTYLE,
     logo: `${logoWILDSTYLE}`,
     audio: `${prefixURL}/audio/wildstyle-gta-vice-city-radio-full-hq.mp3`,
     duration: 4107,
@@ -82,7 +85,8 @@ export const radioList = [
   {
     id: 4,
     name: "Fever",
-    avatar: `${prefixURL}/avatar/fever-avatar-hd-shadow.png`,
+    // avatar: `${prefixURL}/avatar/fever-avatar-hd-shadow.png`,
+    avatar: avatarFEVER,
     logo: `${logoFEVER}`,
     audio: `${prefixURL}/audio/fever-105-grand-theft-auto-vice-city.mp3`,
     duration: 3794,
@@ -93,7 +97,8 @@ export const radioList = [
   {
     id: 5,
     name: "Espantoso",
-    avatar: `${prefixURL}/avatar/espantoso-avatar-hd-shadow.png`,
+    // avatar: `${prefixURL}/avatar/espantoso-avatar-hd-shadow.png`,
+    avatar: avatarESPANTOSO,
     logo: `${logoESPANTOSO}`,
     audio: `${prefixURL}/audio/radio-espantoso-grand-theft-auto-vice-city-vice-city-stories.mp3`,
     duration: 5530,
@@ -104,7 +109,8 @@ export const radioList = [
   {
     id: 6,
     name: "Emotion",
-    avatar: `${prefixURL}/avatar/emotion-avatar-hd-shadow.png`,
+    // avatar: `${prefixURL}/avatar/emotion-avatar-hd-shadow.png`,
+    avatar: avatarEMOTION,
     logo: `${logoEMOTION}`,
     audio: `${prefixURL}/audio/emotion-983-gta-vice-city-stories-gta-vice-city-hosted-by-fernando-martinez.mp3`,
     duration: 7500,
@@ -115,7 +121,8 @@ export const radioList = [
   {
     id: 7,
     name: "Vrock",
-    avatar: `${prefixURL}/avatar/vrock-avatar-hd-shadow.png`,
+    // avatar: `${prefixURL}/avatar/vrock-avatar-hd-shadow.png`,
+    avatar: avatarVROCK,
     logo: `${logoVROCK}`,
     audio: `${prefixURL}/audio/v-rock-grand-theft-auto-vice-city-radio-hard-rock-heavy-metal.mp3`,
     duration: 4738,
@@ -126,7 +133,8 @@ export const radioList = [
   {
     id: 8,
     name: "Vcpr",
-    avatar: `${prefixURL}/avatar/vcpr-avatar-hd-shadow.png`,
+    // avatar: `${prefixURL}/avatar/vcpr-avatar-hd-shadow.png`,
+    avatar: avatarVCPR,
     logo: `${logoVCPR}`,
     audio: `${prefixURL}/audio/gta-vice-city-radio-comedy-vcpr.mp3`,
     duration: 5184,
@@ -137,7 +145,8 @@ export const radioList = [
   {
     id: 9,
     name: "Kchat",
-    avatar: `${prefixURL}/avatar/kchat-avatar-hd-shadow.png`,
+    // avatar: `${prefixURL}/avatar/kchat-avatar-hd-shadow.png`,
+    avatar: avatarKCHAT,
     logo: `${logoKCHAT}`,
     audio: `${prefixURL}/audio/grand-theft-auto-vice-city-k-chat-pc.mp3`,
     duration: 6239,
