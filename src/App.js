@@ -4,17 +4,25 @@ import RadioPage from "./pages/RadioPage";
 import { radioList } from "./data";
 import { useMediaQuery } from "react-responsive";
 import "./responsive.css";
+// import { useState } from "react";
 
 function App() {
   const isMobileDevice = useMediaQuery({
     query: "(max-device-width: 800px)",
   });
+  // const [renderDelay, setRenderDelay] = useState(false)
 
-  // console.log(isMobileDevice === true);
+
+  // setTimeout(() => {
+  //   setRenderDelay(true)
+  // }, 2000)
+
+  console.log(isMobileDevice === true);
 
   return (
     <div id="main-container" className="App">
-      {radioList.map((item, index) => {
+      { 
+        radioList.map((item, index) => {
         return (
           <Switch key={index}>
             <Route exact path={item.path}>

@@ -132,7 +132,7 @@ function RadioPage({ data, index, isMobileDevice }) {
         autoPlay={true}
         onListen={(e) => handleTimeStamp(e)}
         type="audio/mpeg"
-        // onLoadedData={() => playerRef.current.audio.current.play()}
+        onLoadedData={(e) => playerRef.current.audio.current.play(e)}
       />
     </div>
   );
