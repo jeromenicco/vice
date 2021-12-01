@@ -11,7 +11,7 @@ import RadioMenu from "../components/RadioMenu";
 import InfoBox from "../components/InfoBox";
 import viceLogo from "../assets/vice_main_logo.png";
 
-import soundEffect from "../assets/audio/sound-effect.mp3";
+// import soundEffect from "../assets/audio/sound-effect.mp3";
 
 import "react-h5-audio-player/lib/styles.css";
 import "./RadioPage.css";
@@ -29,18 +29,24 @@ function RadioPage({ data, index, isMobileDevice }) {
   const [currURL, setCurrURL] = useState("");
   const [visible, setVisible] = useState(false);
 
-  const loader = soundEffect;
-
   const dispatch = useDispatch();
 
   const handleTimeStamp = (e) => {
     dispatch(setCurrentTime(e.currentTarget.currentTime));
-  };
+  }
+
+  // const handleIsLoaded = (e) => {
+    
+  // }
+
+  // setTimeout(() => {
+  //   setRenderDelay(true)
+  // }, 1000)
 
   useEffect(() => {
-    console.log(stamp);
+    // console.log(stamp);
     console.log(playerRef.current.audio);
-  }, []);
+  }, [stamp]);
 
   setTimeout(() => {
     document.body.style.backgroundColor = background;
@@ -51,6 +57,7 @@ function RadioPage({ data, index, isMobileDevice }) {
 
   useEffect(() => {
     setCurrURL(history.location.pathname);
+    return () => setCurrURL(history.location.pathname);
   }, [history.location.pathname]);
 
   useEffect(() => {
@@ -89,12 +96,12 @@ function RadioPage({ data, index, isMobileDevice }) {
       <img className="vice-logo" src={`${viceLogo}`} alt="main-logo" />
 
       <div className="inner-container">
-        <animated.img
-          className="avatar-img"
-          style={{ ...slideFromLeft }}
-          src={avatar}
-          alt={name}
-        />
+            <animated.img
+              className="avatar-img"
+              style={{ ...slideFromLeft }}
+              src={avatar}
+              alt={name}
+            />
       </div>
 
       <div
@@ -131,8 +138,9 @@ function RadioPage({ data, index, isMobileDevice }) {
         src={audio}
         autoPlay={true}
         onListen={(e) => handleTimeStamp(e)}
+        loop={true}
         type="audio/mpeg"
-        onLoadedData={(e) => playerRef.current.audio.current.play(e)}
+        // onLoadedData={(e) => playerRef.current.audio.current.play(e)}
       />
     </div>
   );

@@ -1,8 +1,8 @@
-import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import RadioPage from "./pages/RadioPage";
 import { radioList } from "./data";
 import { useMediaQuery } from "react-responsive";
+import "./App.css";
 import "./responsive.css";
 // import { useState } from "react";
 
@@ -12,12 +12,11 @@ function App() {
   });
   // const [renderDelay, setRenderDelay] = useState(false)
 
+  setTimeout(() => {
+    // setRenderDelay(true)
+    // window.location.reload(false);
+  }, 2000)
 
-  // setTimeout(() => {
-  //   setRenderDelay(true)
-  // }, 2000)
-
-  console.log(isMobileDevice === true);
 
   return (
     <div id="main-container" className="App">
