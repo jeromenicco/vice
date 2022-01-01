@@ -62,7 +62,7 @@ function RadioPage({ data, index, isMobileDevice }) {
 
   useEffect(() => {
     playerRef.current.audio.current.currentTime = stamp;
-  }, [currURL, stamp]);
+  }, []);
 
   useEffect(() => {
     if (count < duration) {
