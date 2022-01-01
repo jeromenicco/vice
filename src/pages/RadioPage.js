@@ -43,10 +43,10 @@ function RadioPage({ data, index, isMobileDevice }) {
   //   setRenderDelay(true)
   // }, 1000)
 
-  useEffect(() => {
-    // console.log(stamp);
-    console.log(playerRef.current.audio);
-  }, [stamp]);
+  // useEffect(() => {
+  //   console.log(stamp);
+  //   console.log(playerRef.current.audio);
+  // }, [stamp]);
 
   setTimeout(() => {
     document.body.style.backgroundColor = background;
@@ -124,7 +124,9 @@ function RadioPage({ data, index, isMobileDevice }) {
             </animated.div>
           } */}
 
-        {isMobileDevice && <div className="dummy-spacer-mobile" />}
+        {/* {isMobileDevice &&  */}
+        <div className="dummy-spacer-mobile" />
+        {/* } */}
         <RadioMenu
           visible={visible}
           isMobileDevice={isMobileDevice}
@@ -140,7 +142,7 @@ function RadioPage({ data, index, isMobileDevice }) {
         onListen={(e) => handleTimeStamp(e)}
         loop={true}
         type="audio/mpeg"
-        // onLoadedData={(e) => playerRef.current.audio.current.play(e)}
+        // onLoadedData={(e) => playerRef.current.audio.current.play()}
       />
     </div>
   );
