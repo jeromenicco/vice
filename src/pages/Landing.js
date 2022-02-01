@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import viceLogo from "../assets/vice_main_logo.png";
+
 
 import './Landing.css'
 
@@ -14,7 +16,9 @@ function Landing() {
     const history = useHistory()
     return (
         <div className='landing-container'>
-            <button onClick={handleLanding}>ENTER</button>
+            <img className="vice-logo" src={`${viceLogo}`} alt="main-logo" />
+            <p>Get wasted on music</p>
+            <button onClick={handleLanding}>Play</button>
         </div>
     )
 }
