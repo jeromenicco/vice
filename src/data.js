@@ -52,7 +52,7 @@ export const radioList = [
     // avatar: `${prefixURL}/avatar/flash-avatar-hd-shadow.png`,
     avatar: avatarFLASH,
     logo: `${logoFLASH}`,
-    audio: `${prefixURL}/audio/flash-fm-gta-vice-city.mp3`,
+    audio: `${prefixURL}/flash-fm-gta-vice-city.mp3`,
     duration: 3792,
     path: "/",
     background: "#EE4E8C",
