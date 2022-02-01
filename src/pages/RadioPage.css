@@ -6,6 +6,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  position: relative;
+  height: 100vh;
 }
 /* .inner-container-hidden {
   display: flex;
@@ -24,6 +26,7 @@ body {
   /* width: 60%; */
   top: 0;
   left: 0;
+  bottom: 0;
 }
 
 .logo-menu-container {
@@ -32,8 +35,9 @@ body {
 }
 
 .logo-img {
+  position: absolute;
   max-width: 250px;
-  bottom: 0;
+  bottom: 10%;
 }
 
 .audio-mp3 {
@@ -42,6 +46,10 @@ body {
 
 .dummy-spacer-mobile {
   height: 10px;
+}
+
+.dummy-spacer-mobile {
+  
 }
 
 /* .chevron {
