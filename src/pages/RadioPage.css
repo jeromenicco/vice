@@ -35,9 +35,9 @@ body {
 }
 
 .logo-img {
-  position: absolute;
+  /* position: absolute; */
   max-width: 250px;
-  bottom: 10%;
+  /* bottom: 10%; */
 }
 
 .audio-mp3 {
