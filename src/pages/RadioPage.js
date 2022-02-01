@@ -36,17 +36,17 @@ function RadioPage({ data, index, isMobileDevice }) {
   }
 
   // const handleIsLoaded = (e) => {
-    
+
   // }
 
   // setTimeout(() => {
   //   setRenderDelay(true)
   // }, 1000)
 
-  // useEffect(() => {
-  //   console.log(stamp);
-  //   console.log(playerRef.current.audio);
-  // }, [stamp]);
+  useEffect(() => {
+    // console.log(stamp);
+    console.log(playerRef.current.audio);
+  },[]);
 
   setTimeout(() => {
     document.body.style.backgroundColor = background;
@@ -70,9 +70,15 @@ function RadioPage({ data, index, isMobileDevice }) {
     }
   });
 
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: {opacity: 1 },
+    config: { duration: 700}
+  });
+
   const slideFromLeft = useSpring({
     from: { x: -1000 },
-    to: { x: 200 },
+    to: { x: 100 },
   });
 
   const slideFromRight = useSpring({
@@ -95,14 +101,18 @@ function RadioPage({ data, index, isMobileDevice }) {
       />
       <img className="vice-logo" src={`${viceLogo}`} alt="main-logo" />
 
-      <div className="inner-container">
-            <animated.img
-              className="avatar-img"
-              style={{ ...slideFromLeft }}
-              src={avatar}
-              alt={name}
-            />
-      </div>
+
+      {/* {
+        !isMobileDevice && */}
+        <div className="inner-container">
+          <animated.img
+            className="avatar-img"
+            style={{ ...slideFromLeft }}
+            src={avatar}
+            alt={name}
+          />
+        </div>
+      {/* } */}
 
       <div
         className="logo-menu-container"
@@ -110,23 +120,16 @@ function RadioPage({ data, index, isMobileDevice }) {
       >
         <animated.img
           style={
-            isMobileDevice ? { ...slideFromRight } : { ...slideFromBottom }
+            isMobileDevice ? { ...fadeIn } : { ...slideFromBottom }
           }
           className="logo-img"
           src={logo}
           alt={name}
           onMouseEnter={() => !isMobileDevice && setVisible(true)}
         />
-        {/* {
-            !visible &&
-            <animated.div style={{...chevronFade}}>
-              <p className='chevron' >⟨</p>
-            </animated.div>
-          } */}
 
-        {/* {isMobileDevice &&  */}
-        <div className="dummy-spacer-mobile" />
-        {/* } */}
+        {/* <div className="dummy-spacer-mobile" /> */}
+
         <RadioMenu
           visible={visible}
           isMobileDevice={isMobileDevice}
@@ -142,7 +145,7 @@ function RadioPage({ data, index, isMobileDevice }) {
         onListen={(e) => handleTimeStamp(e)}
         loop={true}
         type="audio/mpeg"
-        // onLoadedData={(e) => playerRef.current.audio.current.play()}
+      // onLoadedData={(e) => playerRef.current.audio.current.play()}
       />
     </div>
   );

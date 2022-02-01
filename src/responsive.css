@@ -1,16 +1,15 @@
 /* 13 inch */
 @media screen and (max-width: 1280px) {
   /* RADIO MENU */
-  .logo-menu-container {
+  /* .logo-menu-container {
     height: 33em;
     position: absolute;
     bottom: 30px;
-    /* left: 17%; */
-  }
+  } */
 }
 
 /* iPhone 6 - 7 - 8, iPhone 6 - 7 - 8 plus, iPhone X */
-@media screen and (min-width: 320px) and (max-width: 800px) {
+@media screen and (min-width: 320px) and (max-width: 1280px) {
   .vice-logo {
     display: none;
   }
@@ -32,18 +31,29 @@
     padding-right: 5px;
   }
 
+  .outer-container {
+    justify-content: space-between;
+  }
+
   .logo-img {
     max-width: 200px;
     padding-left: 10px;
+    position: initial;
+    bottom: 30%;
   }
 
   .logo-menu-container {
     margin: 0;
+    display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     height: 340px;
   }
+
+  /* .dummy-spacer-mobile {
+    height: 20px;
+  } */
 
   .menu-container {
     margin: 0;
@@ -70,7 +80,7 @@
     transform: none;
   }
 
-  .menu-items-hidden {
+  .menu-items-visible {
     opacity: initial;
     display: flex;
     flex-wrap: wrap;

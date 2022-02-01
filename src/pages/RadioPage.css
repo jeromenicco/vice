@@ -7,6 +7,7 @@ body {
   flex-direction: column;
   align-items: flex-end;
   position: relative;
+  /* justify-content: space-between; */
   height: 100vh;
 }
 /* .inner-container-hidden {
@@ -35,9 +36,9 @@ body {
 }
 
 .logo-img {
-  /* position: absolute; */
-  max-width: 250px;
-  /* bottom: 10%; */
+  position: absolute;
+  max-width: 220px;
+  bottom: 5%;
 }
 
 .audio-mp3 {

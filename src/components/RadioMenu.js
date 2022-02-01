@@ -10,10 +10,7 @@ function RadioMenu({ visible, isMobileDevice, currURL }) {
   return (
     <div className="menu-container">
       <ul className={
-        visible ?
-          "menu-items-visible"
-          : "menu-items-hidden"
-          }>
+          "menu-items-visible"}>
         {radioList.map((item, index) => (
           <li key={index}>
             <Link

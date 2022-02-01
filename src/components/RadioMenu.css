@@ -5,10 +5,11 @@
 }
 
 .menu-container {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   height: 300px;
-  margin-top: 20%;
+  margin-top: 60px;
+  padding: 2em; */
 }
 
 a {
@@ -48,11 +49,12 @@ a {
   list-style: none;
   transition: all 0.4s ease-in-out;
   opacity: 1;
-  transform: translateY(-80px);
+  /* transform: translateY(-80px); */
 }
 
 .logo-menu-container {
   display: flex;
   flex-direction: column-reverse;
   margin-right: 5%;
+  margin-bottom: 5%;
 }
