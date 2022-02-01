@@ -63,20 +63,20 @@ function RadioPage({ data, index, isMobileDevice }) {
     config: { duration: 700}
   })
 
-  const slideFromLeft = useSpring({
-    from: { x: -1000 },
-    to: { x: 100 },
-  })
+  // const slideFromLeft = useSpring({
+  //   from: { x: -1000 },
+  //   to: { x: 100 },
+  // })
 
-  const slideFromRight = useSpring({
-    from: { x: 1000 },
-    to: { x: 0 },
-  })
+  // const slideFromRight = useSpring({
+  //   from: { x: 1000 },
+  //   to: { x: 0 },
+  // })
 
-  const slideFromBottom = useSpring({
-    from: { y: 250 },
-    to: { y: 0 },
-  })
+  // const slideFromBottom = useSpring({
+  //   from: { y: 250 },
+  //   to: { y: 0 },
+  // })
 
   return (
     <div className='outer-container' key={index}>

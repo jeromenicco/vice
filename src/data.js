@@ -43,7 +43,7 @@ import logoKCHAT from "./assets/radioLogos/kchat-logo-resized.png";
 import weaponKCHAT from "./assets/weapons/pomp1.png";
 import audioKCHAT from './assets/audio/grand-theft-auto-vice-city-k-chat-hq.mp3'
 
-const prefixURL = "https://jeromenicco.com/build/static/media/vice-radio";
+// const prefixURL = "https://jeromenicco.com/build/static/media/vice-radio";
 
 export const radioList = [
   {

@@ -22,7 +22,7 @@ function App() {
     window.addEventListener('load', function(event) {
       history.push('/')
     })
- },[]) 
+ },[history]) 
 
   return (
     <div id='main-container' className='App'>

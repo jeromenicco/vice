@@ -11,7 +11,7 @@ function Landing() {
     const fadeIn = useSpring({
         to: { opacity: 1 },
         from: { opacity: 0 },
-        config: { duration: 2000 }
+        config: { duration: 1000 }
       })
 
     const handleLanding = () => {
