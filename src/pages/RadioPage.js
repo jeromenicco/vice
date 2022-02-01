@@ -29,6 +29,9 @@ function RadioPage({ data, index, isMobileDevice }) {
   const [currURL, setCurrURL] = useState("");
   const [visible, setVisible] = useState(false);
 
+
+  
+
   const dispatch = useDispatch();
 
   const handleTimeStamp = (e) => {
@@ -43,10 +46,11 @@ function RadioPage({ data, index, isMobileDevice }) {
   //   setRenderDelay(true)
   // }, 1000)
 
-  useEffect(() => {
-    // console.log(stamp);
-    console.log(playerRef.current.audio);
-  },[]);
+
+  // useEffect(() => {
+  //   // console.log(stamp);
+  //   console.log(playerRef.current.audio);
+  // },[]);
 
   setTimeout(() => {
     document.body.style.backgroundColor = background;
@@ -54,6 +58,7 @@ function RadioPage({ data, index, isMobileDevice }) {
 
   const history = useHistory();
   const playerRef = useRef();
+  
 
   useEffect(() => {
     setCurrURL(history.location.pathname);
@@ -145,7 +150,7 @@ function RadioPage({ data, index, isMobileDevice }) {
         onListen={(e) => handleTimeStamp(e)}
         loop={true}
         type="audio/mpeg"
-      // onLoadedData={(e) => playerRef.current.audio.current.play()}
+        // onLoadedData={() => playerRef.current.audio.current.play()}
       />
     </div>
   );

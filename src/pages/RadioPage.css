@@ -39,6 +39,7 @@ body {
   position: absolute;
   max-width: 220px;
   bottom: 5%;
+  margin-right: 5%;
 }
 
 .audio-mp3 {

@@ -55,7 +55,7 @@ export const radioList = [
     // audio: `${prefixURL}/flash-fm-gta-vice-city.mp3`,
     audio: audioFLASH,
     duration: 3792.096,
-    path: "/",
+    path: "/flash",
     background: "#EE4E8C",
     weapon: `${weaponFLASH}`,
   },
