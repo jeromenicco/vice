@@ -52,7 +52,13 @@ function RadioPage({ data, index, isMobileDevice }) {
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
-    to: {opacity: 1 },
+    to: {opacity: 1},
+    config: { duration: 700}
+  })
+
+  const fadeInAvatar = useSpring({
+    from: { opacity: 0 },
+    to: {opacity: 0.3 },
     config: { duration: 700}
   })
 
@@ -79,13 +85,16 @@ function RadioPage({ data, index, isMobileDevice }) {
         count={count}
         isMobileDevice={isMobileDevice}
       />
-      <img className='vice-logo' src={`${viceLogo}`} alt='main-logo' />
+      {
+        !isMobileDevice &&
+        <img className='vice-logo' src={`${viceLogo}`} alt='main-logo' />
+      }
 
-        <div className='inner-container'>
+        <div className='inner-container' >
           <animated.img
             className='avatar-img'
             // style={{ ...slideFromLeft }}
-            style={{ ...fadeIn}}
+            style={!isMobileDevice ? { ...fadeIn} : {...fadeInAvatar}}
             src={avatar}
             alt={name}
           />
