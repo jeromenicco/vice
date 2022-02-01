@@ -53,6 +53,7 @@ function RadioPage({ data, index, isMobileDevice }) {
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: {opacity: 1},
+    delay: 500,
     config: { duration: 700}
   })
 
