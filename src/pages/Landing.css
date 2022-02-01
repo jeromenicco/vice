@@ -9,11 +9,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: radial-gradient(#e66465, #9198e5); */
     background: #202020;
 }
-
-
 
 .landing-container p {
     color: white;
@@ -33,7 +30,6 @@
     letter-spacing: 20px;
     transition: 0.5s;
     border-bottom: 10px solid #202020;
-    /* font-style: italic; */
 }
 
 .landing-container button:hover {

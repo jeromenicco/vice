@@ -7,24 +7,12 @@ body {
   flex-direction: column;
   align-items: flex-end;
   position: relative;
-  /* justify-content: space-between; */
   height: 100vh;
 }
-/* .inner-container-hidden {
-  display: flex;
-  opacity: 0;
-  transition: all 2s ease;
-}
-
-.inner-container {
-  opacity: 1;
-  transition: all 2s ease;
-} */
 
 .avatar-img {
   position: absolute;
   max-height: 100%;
-  /* width: 60%; */
   top: 0;
   left: 0;
   bottom: 0;
@@ -32,7 +20,6 @@ body {
 
 .logo-menu-container {
   align-items: center;
-  /* position: relative; */
 }
 
 .logo-img {
@@ -49,18 +36,6 @@ body {
 .dummy-spacer-mobile {
   height: 10px;
 }
-
-.dummy-spacer-mobile {
-  
-}
-
-/* .chevron {
-  position: absolute;
-  font-size: 35px;
-  font-family: 'bebasNeue';
-  bottom: 250px;
-  transform: rotate(90deg);
-} */
 
 .vice-logo {
   position: absolute;

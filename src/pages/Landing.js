@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
-import viceLogo from "../assets/vice_main_logo.png";
+import React from 'react'
+import { useHistory } from 'react-router-dom'
+import viceLogo from '../assets/vice_main_logo.png'
 import { useSpring, animated } from 'react-spring'
 
 
@@ -22,7 +22,7 @@ function Landing() {
     return (
         <div className='landing-container'>
             <animated.div style={{...fadeIn}} className='landing-container'>
-                <img className="vice-logo" src={`${viceLogo}`} alt="main-logo" />
+                <img className='vice-logo' src={`${viceLogo}`} alt='main-logo' />
                 <p>Get wasted on music</p>
                 <button onClick={handleLanding}>Play</button>
             </animated.div>
@@ -30,4 +30,4 @@ function Landing() {
     )
 }
 
-export default Landing;
+export default Landing

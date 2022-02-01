@@ -1,17 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 export const timeStampSlice = createSlice({
-  name: "timeStamp",
+  name: 'timeStamp',
   initialState: {
     currentTime: 0,
   },
   reducers: {
     setCurrentTime: (state, action) => {
-      state.currentTime = action.payload;
+      state.currentTime = action.payload
     },
   },
-});
+})
+  
+export const { setCurrentTime } = timeStampSlice.actions
 
-export const { setCurrentTime } = timeStampSlice.actions;
-
-export default timeStampSlice.reducer;
+export default timeStampSlice.reducer

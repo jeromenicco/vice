@@ -1,31 +1,28 @@
-import React from "react";
-import { radioList } from "../data";
-import { NavLink as Link } from "react-router-dom";
-import "./RadioMenu.css";
+import React from 'react'
+import { radioList } from '../data'
+import { NavLink as Link } from 'react-router-dom'
+import './RadioMenu.css'
 
-function RadioMenu({ visible, isMobileDevice, currURL }) {
-  // const itemsColor = isMobileDevice && { opacity: 0.5 };
-  // const activeItemColor = isMobileDevice && { opacity: 1 };
-
+function RadioMenu() {
   return (
-    <div className="menu-container">
+    <div className='menu-container'>
       <ul className={
-          "menu-items-visible"}>
+          'menu-items-visible'}>
         {radioList.map((item, index) => (
           <li key={index}>
             <Link
               exact
               to={item.path}
-              className="nav-links"
-              activeClassName="active"
+              className='nav-links'
+              activeClassName='active'
             >
-              <p className="menu-items">{item.name}</p>
+              <p className='menu-items'>{item.name}</p>
             </Link>
           </li>
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
-export default RadioMenu;
+export default RadioMenu

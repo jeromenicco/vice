@@ -1,75 +1,72 @@
-import React, { useEffect, useState } from "react";
-import { useSpring, animated } from "react-spring";
+import React, { useEffect, useState } from 'react'
+import { useSpring, animated } from 'react-spring'
 
-import amoFrame from "../assets/vice-frame-weapon.png";
+import amoFrame from '../assets/vice-frame-weapon.png'
 
-import starICON from "../assets/icons/vice-star.png";
-import starActiveICON from "../assets/icons/vice-star-active.png";
+import starICON from '../assets/icons/vice-star.png'
+import starActiveICON from '../assets/icons/vice-star-active.png'
 
-import Slider from "@material-ui/core/Slider";
+import Slider from '@material-ui/core/Slider'
 
-import "./InfoBox.css";
+import './InfoBox.css'
 
 function InfoBox({ data, playerRef, count, isMobileDevice }) {
-  const [volValue, setVolValue] = useState(0.5);
-  const [timeHour, setTimeHour] = useState([]);
-  const [timeMin, setTimeMin] = useState([]);
-
-  // console.log(count);
+  const [volValue, setVolValue] = useState(0.5)
+  const [timeHour, setTimeHour] = useState([])
+  const [timeMin, setTimeMin] = useState([])
 
   useEffect(() => {
     const setDate = () => {
-      const now = new Date();
-      // const second = now.getSeconds();
-      const min = now.getMinutes();
-      const hour = now.getHours();
+      const now = new Date()
+      const min = now.getMinutes()
+      const hour = now.getHours()
 
-      setTimeHour(hour < 10 ? [`0${hour}`] : [`${hour}`]);
-      setTimeMin(min < 10 ? [`0${min}`] : [`${min}`]);
+      setTimeHour(hour < 10 ? [`0${hour}`] : [`${hour}`])
+      setTimeMin(min < 10 ? [`0${min}`] : [`${min}`])
     };
-    setDate();
+    setDate()
 
-    const interval = setInterval(setDate, 1000);
-    return () => clearInterval(interval);
-  }, []);
+    const interval = setInterval(setDate, 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   const handleChange = (e, newValue) => {
     // console.log(e);
-    if (e.cancelable) e.preventDefault();
+    if (e.cancelable) e.preventDefault()
 
-    playerRef.current.audio.current.volume = newValue;
-    setVolValue(newValue);
+    playerRef.current.audio.current.volume = newValue
+    setVolValue(newValue)
   };
 
-  const steps = 1 / 12;
+  const steps = 1 / 12
 
   const fadeAmo = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
     config: { duration: 600 },
-  });
+  })
 
   return (
-    <div className="info-container-global">
-      <ul className="info-container">
-        <li className="time-now">
+    <div className='info-container-global'>
+      <ul className='info-container'>
+        <li className='time-now'>
           {timeHour} : {timeMin}
         </li>
-        <li className="dollars">${count.toFixed(0)}</li>
-        <li className="heart-container">
-          <p className="heart">♥&#xFE0E;</p>
-          <p className="heart-num">00{data.id}</p>
+        <li className='dollars'>${count.toFixed(0)}</li>
+        <li className='heart-container'>
+          <p className='heart'>♥&#xFE0E;</p>
+          <p className='heart-num'>00{data.id}</p>
         </li>
 
         {!isMobileDevice && (
-          <li className="stars-container">
-            <div className="stars-wrap">
+          <li className='stars-container'>
+            <div className='stars-wrap'>
               <div
-                className="stars-empty"
+                className='stars-empty'
                 style={{ backgroundImage: `url(${starICON})` }}
               />
               <div
-                className="stars-full"
+                className='stars-full'
                 style={{
                   width: `${volValue * 100}%`,
                   backgroundImage: `url(${starActiveICON})`,
@@ -80,8 +77,8 @@ function InfoBox({ data, playerRef, count, isMobileDevice }) {
         )}
 
         {!isMobileDevice && (
-          <li className="volume-wrap">
-            <div className="slider-container">
+          <li className='volume-wrap'>
+            <div className='slider-container'>
               <Slider
                 style={{ width: 240 }}
                 value={volValue}
@@ -95,25 +92,17 @@ function InfoBox({ data, playerRef, count, isMobileDevice }) {
         )}
       </ul>
 
-      {/* <div className="weapon-select-wrap">
-        <div className="weapon-select-container1" />
-        <div className="weapon-select-container2" />
-        <div className="weapon-select-container-background" />
-        <div className="weapon-select-container-shadow" />
-        <img className="weapon" src={data.weapon} alt="weapon" />
-      </div> */}
-
-      <div className="weapon-select-wrap">
-        <img className="frame" src={amoFrame} alt="amo-frame" />
+      <div className='weapon-select-wrap'>
+        <img className='frame' src={amoFrame} alt='amo-frame' />
         <animated.img
           style={{ ...fadeAmo }}
-          className="weapon"
+          className='weapon'
           src={data.weapon}
-          alt="weapon"
+          alt='weapon'
         />
       </div>
     </div>
-  );
+  )
 }
 
-export default InfoBox;
+export default InfoBox

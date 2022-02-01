@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
-import { Switch, Route, useHistory } from "react-router-dom";
-import RadioPage from "./pages/RadioPage";
-import Landing from "./pages/Landing";
-import { radioList } from "./data";
-import { useMediaQuery } from "react-responsive";
-import "./App.css";
-import "./responsive.css";
+import { Switch, Route, useHistory } from 'react-router-dom'
+import RadioPage from './pages/RadioPage'
+import Landing from './pages/Landing'
+import { radioList } from './data'
+import { useMediaQuery } from 'react-responsive'
+import './App.css'
+import './responsive.css'
 
 
 
 function App() {
   const isMobileDevice = useMediaQuery({
-    query: "(max-device-width: 1280px)",
+    query: '(max-device-width: 1280px)',
   });
 
   const history = useHistory()
@@ -19,20 +19,13 @@ function App() {
   // console.log(history.location)
 
   useEffect(() => {
-    window.addEventListener("load", function(event) {
+    window.addEventListener('load', function(event) {
       history.push('/')
-    });
+    })
  },[]) 
 
- console.log()
-
-
-
-
-
-
   return (
-    <div id="main-container" className="App">
+    <div id='main-container' className='App'>
       <Switch>
         <Route exact path={'/'}>
           <Landing />
@@ -50,11 +43,10 @@ function App() {
               />
             </Route>
           </Switch>
-        );
+        )
       })}
-      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
