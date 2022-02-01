@@ -119,8 +119,8 @@ function RadioPage({ data, index, isMobileDevice }) {
         onMouseLeave={() => setVisible(false)}
       >
         <animated.img
-          style={
-            isMobileDevice ? { ...fadeIn } : { ...slideFromBottom }
+          style={{...fadeIn}
+            // isMobileDevice ? { ...fadeIn } : { ...slideFromBottom }
           }
           className="logo-img"
           src={logo}
