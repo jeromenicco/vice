@@ -12,7 +12,13 @@ function Landing() {
         to: { opacity: 1 },
         from: { opacity: 0 },
         config: { duration: 1000 }
-      })
+    })
+    const fadeInDelayed = useSpring({
+        to: { opacity: 1 },
+        from: { opacity: 0 },
+        delay: 400,
+        config: { duration: 1000 }
+    })
 
     const handleLanding = () => {
         history.push('/flash')
@@ -22,9 +28,9 @@ function Landing() {
     return (
         <div className='landing-container'>
             <animated.div style={{...fadeIn}} className='landing-container'>
-                <img className='vice-logo' src={`${viceLogo}`} alt='main-logo' />
+                <animated.img style={{...fadeInDelayed}} className='vice-logo' src={`${viceLogo}`} alt='main-logo' />
                 <p>Get wasted on music</p>
-                <button onClick={handleLanding}>Play</button>
+                <animated.button style={{...fadeInDelayed}} onClick={handleLanding}>Play</animated.button>
             </animated.div>
         </div>
     )

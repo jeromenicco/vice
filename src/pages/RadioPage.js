@@ -53,14 +53,15 @@ function RadioPage({ data, index, isMobileDevice }) {
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: {opacity: 1},
-    delay: 500,
-    config: { duration: 700}
+    delay: 1000,
+    config: { duration: 800}
   })
 
   const fadeInAvatar = useSpring({
     from: { opacity: 0 },
     to: {opacity: 0.3 },
-    config: { duration: 700}
+    delay: 1000,
+    config: { duration: 800}
   })
 
   // const slideFromLeft = useSpring({
