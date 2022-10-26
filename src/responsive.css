@@ -35,6 +35,7 @@
   .outer-container {
     justify-content: space-between;
     min-height: -webkit-fill-available;
+    height: 100vh;
   }
 
   .logo-img {
