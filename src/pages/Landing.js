@@ -29,7 +29,7 @@ function Landing() {
         <div className='landing-container'>
             <animated.div style={{...fadeIn}} className='landing-container'>
                 <animated.img style={{...fadeInDelayed}} className='vice-logo' src={`${viceLogo}`} alt='main-logo' />
-                {/* <p>Get wasted on music</p> */}
+                <p>Get wasted on music</p>
                 <animated.button style={{...fadeInDelayed}} onClick={handleLanding}>Play</animated.button>
             </animated.div>
         </div>
