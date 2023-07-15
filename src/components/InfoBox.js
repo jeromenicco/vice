@@ -31,7 +31,6 @@ function InfoBox({ data, playerRef, count, isMobileDevice }) {
   }, [])
 
   const handleChange = (e, newValue) => {
-    // console.log(e);
     if (e.cancelable) e.preventDefault()
 
     playerRef.current.audio.current.volume = newValue

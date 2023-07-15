@@ -12,14 +12,12 @@ import './responsive.css'
 function App() {
   const isMobileDevice = useMediaQuery({
     query: '(max-device-width: 1280px)',
-  });
+  })
 
   const history = useHistory()
 
-  // console.log(history.location)
-
   useEffect(() => {
-    window.addEventListener('load', function(event) {
+    window.addEventListener('load', () => {
       history.push('/')
     })
  },[history]) 

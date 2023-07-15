@@ -64,21 +64,6 @@ function RadioPage({ data, index, isMobileDevice }) {
     config: { duration: 800}
   })
 
-  // const slideFromLeft = useSpring({
-  //   from: { x: -1000 },
-  //   to: { x: 100 },
-  // })
-
-  // const slideFromRight = useSpring({
-  //   from: { x: 1000 },
-  //   to: { x: 0 },
-  // })
-
-  // const slideFromBottom = useSpring({
-  //   from: { y: 250 },
-  //   to: { y: 0 },
-  // })
-
   return (
     <div className='outer-container' key={index}>
       <InfoBox
@@ -95,7 +80,6 @@ function RadioPage({ data, index, isMobileDevice }) {
         <div className='inner-container' >
           <animated.img
             className='avatar-img'
-            // style={{ ...slideFromLeft }}
             style={!isMobileDevice ? { ...fadeIn} : {...fadeInAvatar}}
             src={avatar}
             alt={name}
@@ -107,9 +91,7 @@ function RadioPage({ data, index, isMobileDevice }) {
         onMouseLeave={() => setVisible(false)}
       >
         <animated.img
-          style={{...fadeIn}
-            // isMobileDevice ? { ...fadeIn } : { ...slideFromBottom }
-          }
+          style={{...fadeIn}}
           className='logo-img'
           src={logo}
           alt={name}
